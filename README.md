@@ -1,85 +1,68 @@
-# React Redux Boilerplate
-This is meant as a starter for React projects using tools, patterns and practices that represent the current state of the art in JavaScript development. In those areas where this project fails to achieve that standard, contributions are most welcome!
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Note:** Node v6+ is required for this project.
+## Available Scripts
 
-We recommend using [yarn](https://code.facebook.com/posts/1840075619545360) to manage dependencies. To begin using yarn, install globally with `npm install -g yarn`.
+In the project directory, you can run:
 
-Then simply clone the repository and install using the `yarn` command.
+### `npm start`
 
-```
-git clone git@github.com:Lullabot/React-Redux-Boilerplate.git
-cd React-Redux-Boilerplate
-yarn
-```
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-To build the dev environment with hot reloading of JS and CSS, type:
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-`npm run browser`
+### `npm test`
 
-To build for production w/ server rendering, type:
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-`npm run server`
+### `npm run build`
 
-By default, the site is available at http://localhost:3000
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-If you would like to contribute to this project, fork the repo and submit pull requests. JavaScript code should use the latest JS syntax (ES6 and/or ES7). React components that don't need access to either state or React lifecycle methods should be written as [stateless functional components](https://egghead.io/lessons/react-building-stateless-function-components-new-in-react-0-14).
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-If you are suggesting a major overhaul of some aspect of this project, please submit an issue with your idea and allow some discussion before commencing work.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Tools Included in this Project
+### `npm run eject`
 
-The intention is to provide a basic, but comprehensive, skeleton for React projects. The tools included are:
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- React (of course)
-- Redux (state management)
-- React Router (routing)
-- webpack (bundling assets)
-- PostCSS (processing of CSS)
-- Stylelint and eslint (modified AirBnB)
-- Mocha and Chai (testing)
-- Babel (latest JS)
-- husky (run tasks using git hooks like commit, pre-push)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-All of these are currently mainstream tools for building modern JavaScript applications, however, it may be useful to discuss the rationale for the inclusion of some of these tools.
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-#### Redux
-Redux is both a library and an architecture. It is influenced by Flux, Immutable.js and other prior work. Dan Abramov, the creator of Redux, posted a response on [Stack Overflow](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux) about how/why Redux may be preferred over Flux. It provides valuable insight into the major benefits of Redux.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-#### PostCSS
-If you're familiar with Sass, then writing CSS within this boilerplate project will come easily to you. Although Sass itself is not included, support for Sass syntax has been added due to its popularity. Why not just use Sass? PostCSS can do everything Sass can do, but more. Or less. It's up to the devs on the team to trick it out as they see fit. Also, you can do a lot with PostCSS that isn't possible with Sass.
+## Learn More
 
-If you really don't like PostCSS and want Sass, it's very easy to swap out PostCSS for node-sass.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Other Things that May Come Up
-There may also be questions about some things which are either missing (no task runners) or perhaps structured/configured in an unfamiliar way.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### No Gulp or Grunt
-This project uses npm scripts to run the few tasks needed to build and serve the app. The scripts are located in `package.json`. If you need to add some task to these scripts, look for documentation on either the CLI or Node API for the tool you are considering.
+### Code Splitting
 
-#### File structure
-The file structure for this project uses a modular pattern that is common in JavaScript projects, but may be unfamiliar to some developers. Under `src/components`, find the `HomePage` directory.
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-The file structure there is the pattern used through this project. All of the JS and CSS pertaining to that particular component are grouped together in a single place. This has proven to be a very helpful way of organizing a React/JS project.
+### Analyzing the Bundle Size
 
-If you are worried about "separation of concerns", please see MPJ's [humorous rant](https://www.youtube.com/watch?v=0ZNIQOO2sfA) on the topic.
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-Another quick note, the components designated as "pages" - HomePage, PostPage - are [container components](http://redux.js.org/docs/basics/UsageWithReact.html#presentational-and-container-components).
+### Making a Progressive Web App
 
-#### husky
-Note that linting is performed on each commit and tests are run on pre-push. These tasks are courtesy of [husky](https://www.npmjs.com/package/husky). For reference, the husky tasks are in the `scripts` section of `package.json`.
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-#### Import of CSS
-Take a look at `src/components/HomePage.js`. Near the top of that file you will see a conditional import of the `HomePage.css` file. This is how CSS imports with webpack work.
+### Advanced Configuration
 
-In a dev environment (what you get when you type `npm run browser`), the CSS is injected into the `<HEAD>` of the document. A change to CSS will result in the style being quickly hotloaded into the browser - no lengthy rebuilds or refreshes needed.
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-In a production environment, the CSS files are bundled into a single file, `bundle.css` that is included in the page via the `<LINK>` tag. Take a look at  `src/middleware.js` to see this in action.
+### Deployment
 
-Other methods of building and loading CSS have proved slower/clunkier than webpack. However, there is a minor annoyance that comes with webpack.
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-#### Imports of CSS Variables
-If the CSS file you are working in uses variables or mixins, it will have to import those files before they can be used. Webpack does not yet support global variables. This is true for Sass, Less and PostCSS.
+### `npm run build` fails to minify
 
-## Credits
-The biggest influence on this project is the Redux documentation. Redux is the rare library that is not only an outstanding work of code, but is accompanied by clear and thorough documentation. Reading the [Redux documentation](http://redux.js.org/) will help you understand most of the code in this project.
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

@@ -1,41 +1,18 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { createStore, applyMiddleware, compose } from 'redux';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
-import posts from './reducers';
-import routes from './routes';
+import configureStore from './store/configureStore';
+import * as serviceWorker from './serviceWorker';
+const store = configureStore();
 
-// This allows us to use Redux dev tools.
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
+ReactDOM.render(
+    <Provider store={store}>
+<App />
+</Provider>, document.getElementById('root'));
 
-const middleware = [thunk];
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-}
-
-// With server rendering, we can grab the preloaded state.
-const preloadedState = window.__PRELOADED_STATE__ || {}; // eslint-disable-line
-
-const store = createStore(
-  posts,
-  preloadedState,
-  composeEnhancers(applyMiddleware(...middleware))
-);
-
-render(
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      { routes }
-    </Router>
-  </Provider>,
-  document.getElementById('app') // eslint-disable-line no-undef
-);
-
-if (process.env.NODE_ENV === 'development' && module.hot) {
-  module.hot.accept('./reducers', () => {
-    store.replaceReducer(require('./reducers').default); // eslint-disable-line global-require
-  });
-}
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+//serviceWorker.unregister();
